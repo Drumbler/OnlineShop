@@ -1,0 +1,10 @@
+<title>Products</title>
+<body>
+{% for p in products %}
+<div>
+<a href = "/product/{{ p.product_id }}">
+    {{ p.product_name }}
+</a>
+</div>
+{% endfor %}
+</body>
