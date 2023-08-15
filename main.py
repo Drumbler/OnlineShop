@@ -1,17 +1,14 @@
-# import psycopg2
-#
-#
-# try:
-#     connect = psycopg2.connect(dbname='OnlineShop',
-#                                user='postgres',
-#                                password='JustStan13',
-#                                host='127.0.0.1'
-#                                )
-#
-#     with connect.cursor() as cursor:
-#
-#         all_products = cursor.execute('SELECT * FROM products')
-#         print(f"products table: {cursor.fetchall()}")
-#         pass
-# except:
-#     print("Can't establish connection to database")
+from flask import Flask
+from views.products import render_products
+
+app = Flask(__name__)
+
+
+@app.route('/products')
+def products_page():
+    return render_products()
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    # Переименовать
