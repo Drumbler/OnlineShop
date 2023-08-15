@@ -1,10 +1,16 @@
-<title>Products</title>
-<body>
-{% for p in products %}
-<div>
-<a href = "/products/{{ p.product_id }}">
-    {{ p.product_name }}
-</a>
-</div>
-{% endfor %}
-</body>
+{% extends "base.j2" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+    {% for p in products %}
+    <div>
+        <a href = "/products/{{ p.product_id }}">
+            {{ p.product_name }}
+        </a>
+        <img src="/static/books.jpg">
+    </div>
+    {% endfor %}
+{% endblock %}
+
+

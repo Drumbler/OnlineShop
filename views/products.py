@@ -1,13 +1,11 @@
-from jinja2 import Environment, FileSystemLoader
 from models.products import get_products
+from views.template_loader import jinja_env
 
 
 def render_products():
     products = get_products()
-    templateLoader = FileSystemLoader(searchpath="./")
-    templateEnv = Environment(loader=templateLoader)
-    template = templateEnv.get_template("views/templates/products.j2")
-    outputText = template.render(products=products)  # this is where to put args to the template renderer
+    template = jinja_env.get_template("/products.j2")
+    output_text = template.render(products=products)
 
-    return outputText
+    return output_text
 # переименовать products
