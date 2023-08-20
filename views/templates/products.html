@@ -1,4 +1,4 @@
-{% extends "base.j2" %}
+{% extends "base.html" %}
 
 {% block title %}Products{% endblock %}
 
@@ -6,9 +6,11 @@
     {% for p in products %}
     <div>
         <a href = "/products/{{ p.product_id }}">
-            {{ p.product_name }}
+            <img src="/static/{{ p.picture }}">
+            <p>{{ p.product_name }}</p>
+
         </a>
-        <img src="/static/books.jpg">
+
     </div>
     {% endfor %}
 {% endblock %}
