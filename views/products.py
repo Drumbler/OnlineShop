@@ -1,16 +1,16 @@
-from models.products import get_products
-from views.template_loader import jinja_env
+from flask import render_template
+from models.products import get_products, get_product
 
 
 def render_products():
     products = get_products()
-    template = jinja_env.get_template("/products.html")
-    output_text = template.render(products=products)
-
-    return output_text
+    return render_template('products.html', products=products)
 
 
 def render_main():
-    output = jinja_env.get_template("/main.html").render()
-    return output
-# переименовать products
+    return render_template('main.html')
+
+
+def render_product_page(product_id):
+    product = get_product(product_id)
+    return render_template('product_page.html', product=product)
