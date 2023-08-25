@@ -1,21 +1,36 @@
 <!doctype html>
 <html lang="en">
+{% extends "base.html" %}
+{% block title %} Main Page {% endblock %}
+<style>
+    h1{
+        text-decoration: none;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% extends "base.html" %}
-    {% block titile %} Main Page {% endblock %}
-
-    {% block content %}
-    <div>
-        <a href="/products">
-            <h1>
-                Журнал товаров
-            </h1>
-        </a>
-    </div>
 </head>
+<link rel="stylesheet" href="/static/main.css">
+
+
+
+<body>
+    {% block content %}
+<div id="pageStack">
+    <a href="/products" style="color: black;">
+        <h1>
+            Весь ассортимент
+        </h1>
+    </a>
+    <a href="/categories" style="color: black;">
+        <h1>
+            Категории
+        </h1>
+    </a>
+</div>
 {% endblock %}
+</body>
 </html>

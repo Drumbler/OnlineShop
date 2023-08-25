@@ -6,4 +6,5 @@ def get_products():
 
 
 def get_product(product_id):
-    return db.query(f'SELECT * FROM products WHERE product_id={product_id}')[0]
+    return db.query_single('SELECT * FROM products WHERE product_id=%(product_id)s',
+                           product_id=product_id)

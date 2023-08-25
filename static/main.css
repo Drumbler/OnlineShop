@@ -1,0 +1,72 @@
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap');
+    * {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;   
+}
+
+.products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 500px;
+}
+#header{
+    background: black;
+    text-align: center;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.25em;
+    line-height: 75px;
+    width: 100%;
+    height: 75px;
+    border-bottom: 10px;
+    border-bottom-style:groove;
+    border-bottom-color: wheat ;
+    margin-bottom: 50px;
+}
+#pageStack {
+    text-align: center;
+    font-style: normal;
+    font-family: 'Alumni Sans', sans-serif;
+    color: black;    
+    
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+    background: black;
+    border-top: 10px;
+    border-top-style: ridge;
+    border-top-color: wheat;
+    line-height: 50px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: wheat;
+    text-align:right;   
+}
+
+
+.foot{
+    text-decoration: none;
+    color: wheat;
+}
+
+
+.pictureProduct {
+    border-radius: 5px;
+    border: 5px;
+    margin-left: 4%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.pictureProduct img{
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+}
+
+
