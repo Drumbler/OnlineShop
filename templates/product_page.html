@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="en">
+{% extends "base.html" %}
+
+{% block title %} {{ product.product_name }} {% endblock %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ product.product_name }}</title>
 </head>
 
-{% extends "base.html" %}
 
-{% block title %} Product page {% endblock %}
 {% block content %}
 
 <body>
-        <img src="/static/{{ product.picture }}">
-    <div>
-        {{ product.product_name }}
+<img src="/static/{{ product.picture }}">
+<div>
+    {{ product.product_name }}
 
-    </div>
+</div>
 </body>
 {% endblock %}
 </html>

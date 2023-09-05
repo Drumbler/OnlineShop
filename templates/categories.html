@@ -1,31 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 {% extends "base.html" %}
-{% block title %}Products{% endblock %}
-
+{% block title %} Categories {% endblock %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
 </head>
-
-
+<link rel="stylesheet" href="/static/main.css">
+<body>
 {% block content %}
-<div class="products">
-    {% for p in products %}
-    <div class="pictureProduct">
-        <a href="/products/{{ p.product_id }}">
-            <img src="/static/{{ p.picture }}">
-
-            <p>{{ p.product_name }}</p>
-            <p> {{ p.category_name }}</p>
-
-        </a>
-    </div>
+<div class="categories">
+    {% for c in categories %}
+    <a href="/categories/{{ c.category_id }}">
+        <p> {{ c.category_name }}</p>
+    </a>
     {% endfor %}
 </div>
 {% endblock %}
-
+</body>
 </html>
