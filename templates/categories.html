@@ -13,7 +13,7 @@
 {% block content %}
 <div class="categories">
     {% for c in categories %}
-    <a href="/categories/{{ c.category_id }}">
+    <a href="/products?category={{ c.category_id }}">
         <p> {{ c.category_name }}</p>
     </a>
     {% endfor %}

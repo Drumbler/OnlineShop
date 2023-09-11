@@ -13,6 +13,26 @@
 
 
 {% block content %}
+<div>
+    {% if sort == 'DESC' %}
+    <a style='' href="{{ url_for('products', category=category, sort='ASC') }}">
+        воз
+
+    </a>
+    <a>
+        убыв
+    </a>
+    {% else %}
+    <a>
+        воз
+    </a>
+    <a href="{{ url_for('products', category=category, sort='DESC') }}">
+        убыв
+    </a>
+
+    {% endif %}
+</div>
+
 <div class="products">
     {% for p in products %}
     <div class="pictureProduct">
@@ -20,7 +40,7 @@
             <img src="/static/{{ p.picture }}">
 
             <p>{{ p.product_name }}</p>
-            <p> {{ p.category_name }}</p>
+            <p> {{ p.price }} RUB</p>
 
         </a>
     </div>

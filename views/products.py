@@ -1,13 +1,17 @@
-from flask import render_template, request
+from flask import render_template
 
 from models.exceptions import RecordNotFound
 from models.products import get_product, get_categories, get_products_category
 
 
-def render_products(category):
-    products = get_products_category(category)
+def render_products(category, sort):
+    sort = {
+        'ASC': 'ASC',
+        'DESC': 'DESC'
+    }.get(sort.upper(), 'ASC')
+    products = get_products_category(category, sort)
     return render_template('products.html',
-                           products=products)
+                           products=products, category=category, sort=sort)
 
 
 def render_main():
@@ -27,3 +31,7 @@ def render_categories():
     categories = get_categories()
     return render_template('categories.html',
                            categories=categories)
+
+
+
+
